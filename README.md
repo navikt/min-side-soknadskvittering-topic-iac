@@ -1,0 +1,1 @@
+# min-side-soknadskvittering-topic-iac
