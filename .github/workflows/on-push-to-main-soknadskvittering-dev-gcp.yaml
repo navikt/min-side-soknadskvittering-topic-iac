@@ -1,0 +1,26 @@
+name: Deploy public soknadskvittering-topic i dev-gcp
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - dev-gcp/aapen-soknadskvittering.yaml
+  workflow_dispatch:
+
+jobs:
+  update-kafka-topic:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Sjekk ut koden
+        uses: actions/checkout@v3
+
+      - name: 'Deploy-er til min-side i dev-gcp'
+        uses: 'nais/deploy/actions/deploy@v1'
+        env:
+          REF: ${{ github.sha }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: ./dev-gcp/aapen-soknadskvittering.yaml
+          PRINT_PAYLOAD: true
