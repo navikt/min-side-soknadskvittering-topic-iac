@@ -11,6 +11,8 @@ on:
 jobs:
   update-kafka-topic:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
 
       - name: Sjekk ut koden
