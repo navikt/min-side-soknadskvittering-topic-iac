@@ -18,3 +18,12 @@ spec:
     - team: min-side
       application: tms-soknadskvittering
       access: read
+    - team: min-side
+      application: tms-event-test-producer
+      access: write
+    - team: min-side
+      application: tms-event-test-producer-to
+      access: write
+    - team: min-side
+      application: tms-kafka-manager
+      access: read
