@@ -27,3 +27,7 @@ spec:
     - team: min-side
       application: tms-kafka-manager
       access: read
+    - team: team-soknad
+      application: innsending-api
+      access: write
+
